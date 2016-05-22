@@ -7,10 +7,10 @@ namespace HomeCinema.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                "~/Scripts/Vendors/modernizr.js"));
+                "~/Scripts/Vendors/modernizr-2.8.3.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/vendors").Include(
-                "~/Scripts/Vendors/jquery.js",
+                "~/Scripts/Vendors/jquery-2.2.3.js",
                 "~/Scripts/Vendors/bootstrap.js",
                 "~/Scripts/Vendors/toastr.js",
                 "~/Scripts/Vendors/jquery.raty.js",
@@ -22,7 +22,7 @@ namespace HomeCinema.Web
                 "~/Scripts/Vendors/angular-base64.js",
                 "~/Scripts/Vendors/angular-file-upload.js",
                 "~/Scripts/Vendors/angucomplete-alt.min.js",
-                "~/Scripts/Vendors/ui-bootstrap-tpls-0.13.1.js",
+                "~/Scripts/Vendors/ui-bootstrap-tpls.js",
                 "~/Scripts/Vendors/underscore.js",
                 "~/Scripts/Vendors/raphael.js",
                 "~/Scripts/Vendors/morris.js",

@@ -130,7 +130,73 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\blank.gif" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\fancybox_buttons.png" />
+    <Content Include="Content\css\fancybox_loading%402x.gif" />
+    <Content Include="Content\css\fancybox_loading.gif" />
+    <Content Include="Content\css\fancybox_overlay.png" />
+    <Content Include="Content\css\fancybox_sprite%402x.png" />
+    <Content Include="Content\css\fancybox_sprite.png" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\jquery.fancybox.css" />
+    <Content Include="Content\css\loading-bar.css" />
+    <Content Include="Content\css\morris.css" />
+    <Content Include="Content\css\site.css" />
+    <Content Include="Content\css\toastr.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\background.jpg" />
+    <Content Include="Content\images\movies\antman.jpg" />
+    <Content Include="Content\images\movies\background.jpg" />
+    <Content Include="Content\images\movies\batmanvssuperman.jpg" />
+    <Content Include="Content\images\movies\betafish.jpg" />
+    <Content Include="Content\images\movies\edgeoftomorrow.jpg" />
+    <Content Include="Content\images\movies\fantasticfour.jpg" />
+    <Content Include="Content\images\movies\home.jpg" />
+    <Content Include="Content\images\movies\insideout.jpg" />
+    <Content Include="Content\images\movies\jurassicworld.jpg" />
+    <Content Include="Content\images\movies\madmax.jpg" />
+    <Content Include="Content\images\movies\minions.jpg" />
+    <Content Include="Content\images\movies\southpaw.jpg" />
+    <Content Include="Content\images\movies\spectre.jpg" />
+    <Content Include="Content\images\movies\ted2.jpg" />
+    <Content Include="Content\images\movies\thelongestride.jpg" />
+    <Content Include="Content\images\movies\thewalkingdead.jpg" />
+    <Content Include="Content\images\movies\trainwreck.jpg" />
+    <Content Include="Content\images\movies\truedetective.jpg" />
+    <Content Include="Content\images\movies\unknown.jpg" />
+    <Content Include="Content\images\movies\Wallpaper 8.png" />
+    <Content Include="Content\images\raty\cancel-off.png" />
+    <Content Include="Content\images\raty\cancel-on.png" />
+    <Content Include="Content\images\raty\star-half-big.png" />
+    <Content Include="Content\images\raty\star-half.png" />
+    <Content Include="Content\images\raty\star-off-big.png" />
+    <Content Include="Content\images\raty\star-off.png" />
+    <Content Include="Content\images\raty\star-on-big.png" />
+    <Content Include="Content\images\raty\star-on.png" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Vendors\angucomplete-alt.min.js" />
+    <Content Include="Scripts\Vendors\angular-base64.js" />
+    <Content Include="Scripts\Vendors\angular-cookies.js" />
+    <Content Include="Scripts\Vendors\angular-file-upload.js" />
+    <Content Include="Scripts\Vendors\angular-route.js" />
+    <Content Include="Scripts\Vendors\angular-validator.js" />
+    <Content Include="Scripts\Vendors\angular.js" />
+    <Content Include="Scripts\Vendors\bootstrap.js" />
+    <Content Include="Scripts\Vendors\jquery-2.2.3.js" />
+    <Content Include="Scripts\Vendors\jquery.fancybox-media.js" />
+    <Content Include="Scripts\Vendors\jquery.fancybox.js" />
+    <Content Include="Scripts\Vendors\jquery.raty.js" />
+    <Content Include="Scripts\Vendors\loading-bar.js" />
+    <Content Include="Scripts\Vendors\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Vendors\morris.js" />
+    <Content Include="Scripts\Vendors\raphael.js" />
+    <Content Include="Scripts\Vendors\respond.src.js" />
+    <Content Include="Scripts\Vendors\toastr.js" />
+    <Content Include="Scripts\Vendors\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\Vendors\underscore.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +215,15 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -174,6 +249,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\spa\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
