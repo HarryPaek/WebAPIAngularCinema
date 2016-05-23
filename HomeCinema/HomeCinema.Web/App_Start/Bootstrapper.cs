@@ -10,7 +10,7 @@ namespace HomeCinema.Web
             AutofacWebapiConfig.Initialize(GlobalConfiguration.Configuration);
 
             // Configure AutoMapper
-            // AutoMapperConfiguration.Configure();
+            AutoMapperConfiguration.Configure();
         }
     }
 }
