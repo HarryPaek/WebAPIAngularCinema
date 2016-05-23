@@ -176,7 +176,6 @@
     <Content Include="Content\images\raty\star-off.png" />
     <Content Include="Content\images\raty\star-on-big.png" />
     <Content Include="Content\images\raty\star-on.png" />
-    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\spa\app.js" />
     <Content Include="Scripts\spa\directives\availableMovie.directive.js" />
