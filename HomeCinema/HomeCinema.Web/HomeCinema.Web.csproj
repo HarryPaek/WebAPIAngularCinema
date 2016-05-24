@@ -177,6 +177,10 @@
     <Content Include="Content\images\raty\star-on-big.png" />
     <Content Include="Content\images\raty\star-on.png" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\spa\account\login.html" />
+    <Content Include="Scripts\spa\account\loginCtrl.js" />
+    <Content Include="Scripts\spa\account\register.html" />
+    <Content Include="Scripts\spa\account\registerCtrl.js" />
     <Content Include="Scripts\spa\app.js" />
     <Content Include="Scripts\spa\directives\availableMovie.directive.js" />
     <Content Include="Scripts\spa\directives\availableMovie.html" />
@@ -191,6 +195,7 @@
     <Content Include="Scripts\spa\modules\common.core.js" />
     <Content Include="Scripts\spa\modules\common.ui.js" />
     <Content Include="Scripts\spa\services\apiService.js" />
+    <Content Include="Scripts\spa\services\membershipService.js" />
     <Content Include="Scripts\spa\services\notificationService.js" />
     <Content Include="Scripts\Vendors\angucomplete-alt.min.js" />
     <Content Include="Scripts\Vendors\angular-base64.js" />
