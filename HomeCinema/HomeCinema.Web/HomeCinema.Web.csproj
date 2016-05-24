@@ -182,12 +182,18 @@
     <Content Include="Scripts\spa\account\register.html" />
     <Content Include="Scripts\spa\account\registerCtrl.js" />
     <Content Include="Scripts\spa\app.js" />
+    <Content Include="Scripts\spa\customers\customerEditCtrl.js" />
+    <Content Include="Scripts\spa\customers\index.html" />
+    <Content Include="Scripts\spa\customers\customersCtrl.js" />
+    <Content Include="Scripts\spa\customers\editCustomerModal.html" />
     <Content Include="Scripts\spa\directives\availableMovie.directive.js" />
     <Content Include="Scripts\spa\directives\availableMovie.html" />
     <Content Include="Scripts\spa\directives\componentRating.directive.js" />
     <Content Include="Scripts\spa\home\index.html" />
     <Content Include="Scripts\spa\home\indexCtrl.js" />
     <Content Include="Scripts\spa\home\rootCtrl.js" />
+    <Content Include="Scripts\spa\layout\customPager.directive.js" />
+    <Content Include="Scripts\spa\layout\pager.html" />
     <Content Include="Scripts\spa\layout\sideBar.directive.js" />
     <Content Include="Scripts\spa\layout\sideBar.html" />
     <Content Include="Scripts\spa\layout\topBar.directive.js" />
@@ -229,6 +235,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\GenresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
@@ -236,12 +243,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
+    <Compile Include="Infrastructure\Core\PaginationSet.cs" />
+    <Compile Include="Infrastructure\Extensions\EntitiesExtensions.cs" />
     <Compile Include="Infrastructure\Extensions\RequestMessageExtensions.cs" />
     <Compile Include="Infrastructure\Mappings\DomainToViewModelMappingProfile.cs" />
     <Compile Include="Infrastructure\MessageHandlers\HomeCinemaAuthHandler.cs" />
+    <Compile Include="Infrastructure\Validators\CustomerViewModelValidator.cs" />
     <Compile Include="Infrastructure\Validators\LoginViewModelValidator.cs" />
     <Compile Include="Infrastructure\Validators\RegistrationViewModelValidator.cs" />
     <Compile Include="Infrastructure\Validators\MovieViewModelValidator.cs" />
+    <Compile Include="Models\CustomerViewModel.cs" />
     <Compile Include="Models\GenreViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\MovieViewModel.cs" />

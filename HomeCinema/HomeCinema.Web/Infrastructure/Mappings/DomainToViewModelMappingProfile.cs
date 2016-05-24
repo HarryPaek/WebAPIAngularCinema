@@ -22,6 +22,8 @@ namespace HomeCinema.Web.Infrastructure.Mappings
             CreateMap<Genre, GenreViewModel>()
                 .ForMember(vm => vm.NumberOfMovies, map => map.MapFrom(g => g.Movies.Count()));
 
+            CreateMap<Customer, CustomerViewModel>();
+
             /*
             Mapper.CreateMap<Movie, MovieViewModel>()
                 .ForMember(vm => vm.Genre, map => map.MapFrom(m => m.Genre.Name))
