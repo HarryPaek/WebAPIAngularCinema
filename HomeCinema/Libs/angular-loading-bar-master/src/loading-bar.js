@@ -1,9 +1,3 @@
-/*! 
- * angular-loading-bar v0.9.0
- * https://chieffancypants.github.io/angular-loading-bar
- * Copyright (c) 2016 Wes Cruver
- * License: MIT
- */
 /*
  * angular-loading-bar
  *
