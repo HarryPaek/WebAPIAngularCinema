@@ -27,7 +27,7 @@ namespace HomeCinema.Web.Controllers
         }
 
         [HttpGet]
-        [Route("search/{page:int=0}/{pageSize=4}/{filter?}")]
+        [Route("search/{page:int=0}/{pageSize=6}/{filter?}")]
         public HttpResponseMessage Search(HttpRequestMessage request, int? page, int? pageSize, string filter = null)
         {
             int currentPage = page.Value;
@@ -36,26 +36,25 @@ namespace HomeCinema.Web.Controllers
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                List<Customer> customers = null;
-                int totalMovies = new int();
+                IQueryable<Customer> customerQuery = null;
+                // int totalMovies = new int();
 
                 if (!string.IsNullOrEmpty(filter))
                 {
                     filter = filter.Trim().ToLower();
-                    customers = _customersRepository.GetAll()
+                    customerQuery = _customersRepository.GetAll()
                         .OrderBy(c => c.ID)
                         .Where(c => c.LastName.ToLower().Contains(filter) ||
                                     c.IdentityCard.ToLower().Contains(filter) ||
-                                    c.FirstName.ToLower().Contains(filter))
-                        .ToList();
+                                    c.FirstName.ToLower().Contains(filter));
                 }
                 else
                 {
-                    customers = _customersRepository.GetAll().ToList();
+                    customerQuery = _customersRepository.GetAll().OrderBy(c => c.ID);
                 }
 
-                totalMovies = customers.Count();
-                customers = customers.Skip(currentPage * currentPageSize)
+                int totalMovies = customerQuery.Count();
+                var customers = customerQuery.Skip(currentPage * currentPageSize)
                                      .Take(currentPageSize)
                                      .ToList();
 

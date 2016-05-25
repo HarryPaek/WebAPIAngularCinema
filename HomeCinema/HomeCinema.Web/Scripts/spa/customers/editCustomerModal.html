@@ -43,8 +43,8 @@
                         <div class="col-xs-6 selectContainer">
                             <label class="control-label" for="dateOfBirth">Date of Birth</label>
                             <p class="input-group">
-                                <input type="text" class="form-control" name="dateOfBirth" datepicker-popup="{{format}}" ng-model="EditedCustomer.DateOfBirth" is-open="datepicker.opened"
-                                       datepicker-options="dateOptions" ng-required="true" datepicker-append-to-body="true" close-text="Close"
+                                <input type="text" class="form-control" name="dateOfBirth" uib-datepicker-popup="{{format}}" ng-model="EditedCustomer.DateOfBirth" is-open="datepicker.opened"
+                                       datepicker-options="dateOptions" ng-required="true" datepicker-append-to-body="true" close-text="Close" alt-input-formats="inputFormats"
                                        validate-on="blur" required required-message="'Date of birth is required'" />
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-default" ng-click="openDatePicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>

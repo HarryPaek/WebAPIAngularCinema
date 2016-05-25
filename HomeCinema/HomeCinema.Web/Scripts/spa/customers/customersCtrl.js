@@ -5,7 +5,7 @@
 
     customersCtrl.$inject = ['$scope','$uibModal', 'apiService', 'notificationService'];
 
-    function customersCtrl($scope, $modal, apiService, notificationService) {
+    function customersCtrl($scope, $uibModal, apiService, notificationService) {
         
         $scope.pageClass = 'page-customers';
         $scope.loadingCustomers = true;
@@ -24,7 +24,7 @@
             var config = {
                 params: {
                     page: page,
-                    pageSize: 4,
+                    pageSize: 6,
                     filter: $scope.filterCustomers
                 }
             };
@@ -34,7 +34,7 @@
 
         function openEditDialog(customer) {
             $scope.EditedCustomer = customer;
-            $modal.open({
+            $uibModal.open({
                 templateUrl: 'scripts/spa/customers/editCustomerModal.html',
                 controller: 'customerEditCtrl',
                 scope: $scope
