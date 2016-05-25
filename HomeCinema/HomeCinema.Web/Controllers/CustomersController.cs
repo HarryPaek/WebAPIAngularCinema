@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HomeCinema.Data.Infrastructure;
+using HomeCinema.Data.Extensions;
 using HomeCinema.Data.Repositories;
 using HomeCinema.Entities;
 using HomeCinema.Web.Infrastructure.Core;
@@ -97,6 +98,45 @@ namespace HomeCinema.Web.Controllers
                 return response;
             });
         }
+
+        [HttpPost]
+        [Route("register")]
+        public HttpResponseMessage Register(HttpRequestMessage request, CustomerViewModel customer)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState.Keys.SelectMany(k => ModelState[k].Errors)
+                                                                                                .Select(m => m.ErrorMessage).ToArray());
+                }
+                else
+                {
+                    if (_customersRepository.UserExists(customer.Email, customer.IdentityCard))
+                    {
+                        ModelState.AddModelError("Invalid user", "Email or Identity Card number already exists");
+                        response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState.Keys.SelectMany(k => ModelState[k].Errors)
+                                                                                                    .Select(m => m.ErrorMessage).ToArray());
+                    }
+                    else
+                    {
+                        Customer newCustomer = new Customer();
+
+                        newCustomer.UpdateCustomer(customer);
+                        _customersRepository.Add(newCustomer);
+
+                        _unitOfWork.Commit();
+                        
+                        // Update view model
+                        customer = Mapper.Map<Customer, CustomerViewModel>(newCustomer);
+                        response = request.CreateResponse<CustomerViewModel>(HttpStatusCode.Created, customer);
+                    }
+                }
+                
+                return response;
+            });
+        }
     }
 }
-

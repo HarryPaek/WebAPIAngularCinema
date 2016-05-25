@@ -19,7 +19,7 @@
             })
             .when("/register", {
                 templateUrl: "scripts/spa/account/register.html",
-                controller: "registerCtrl"
+                controller: "registerCtrl",
             })
             .when("/customers", {
                 templateUrl: "scripts/spa/customers/customers.html",
@@ -27,7 +27,8 @@
             })
             .when("/customers/register", {
                 templateUrl: "scripts/spa/customers/register.html",
-                controller: "customersRegCtrl"
+                controller: "customersRegCtrl",
+                resolve: { isAuthenticated: isAuthenticated }
             })
             .when("/movies", {
                 templateUrl: "scripts/spa/movies/movies.html",

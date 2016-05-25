@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\CustomerExtensions.cs" />
     <Compile Include="Extensions\UserExtensions.cs" />
     <Compile Include="HomeCinemaContext.cs" />
     <Compile Include="Configurations\CustomerConfiguration.cs" />

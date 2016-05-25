@@ -185,7 +185,9 @@
     <Content Include="Scripts\spa\customers\customerEditCtrl.js" />
     <Content Include="Scripts\spa\customers\customers.html" />
     <Content Include="Scripts\spa\customers\customersCtrl.js" />
+    <Content Include="Scripts\spa\customers\customersRegCtrl.js" />
     <Content Include="Scripts\spa\customers\editCustomerModal.html" />
+    <Content Include="Scripts\spa\customers\register.html" />
     <Content Include="Scripts\spa\directives\availableMovie.directive.js" />
     <Content Include="Scripts\spa\directives\availableMovie.html" />
     <Content Include="Scripts\spa\directives\componentRating.directive.js" />
