@@ -183,7 +183,7 @@
     <Content Include="Scripts\spa\account\registerCtrl.js" />
     <Content Include="Scripts\spa\app.js" />
     <Content Include="Scripts\spa\customers\customerEditCtrl.js" />
-    <Content Include="Scripts\spa\customers\index.html" />
+    <Content Include="Scripts\spa\customers\customers.html" />
     <Content Include="Scripts\spa\customers\customersCtrl.js" />
     <Content Include="Scripts\spa\customers\editCustomerModal.html" />
     <Content Include="Scripts\spa\directives\availableMovie.directive.js" />

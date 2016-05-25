@@ -22,7 +22,7 @@
                 controller: "registerCtrl"
             })
             .when("/customers", {
-                templateUrl: "scripts/spa/customers/index.html",
+                templateUrl: "scripts/spa/customers/customers.html",
                 controller: "customersCtrl"
             })
             .when("/customers/register", {
@@ -30,7 +30,7 @@
                 controller: "customersRegCtrl"
             })
             .when("/movies", {
-                templateUrl: "scripts/spa/movies/index.html",
+                templateUrl: "scripts/spa/movies/movies.html",
                 controller: "moviesCtrl"
             })
             .when("/movies/add", {
@@ -46,7 +46,7 @@
                 controller: "movieEditCtrl"
             })
             .when("/rental", {
-                templateUrl: "scripts/spa/rental/index.html",
+                templateUrl: "scripts/spa/rental/rental.html",
                 controller: "rentStatsCtrl"
             })
             .otherwise({ redirectTo: "/" });
