@@ -6,6 +6,10 @@ using HomeCinema.Web.Models;
 using System.Collections.Generic;
 using System.Web.Http;
 using HomeCinema.Data.Infrastructure;
+using System.Net.Http;
+using System.Net;
+using System;
+using AutoMapper;
 
 namespace HomeCinema.Web.Controllers
 {
@@ -27,6 +31,92 @@ namespace HomeCinema.Web.Controllers
             _stocksRepository = stocksRepository;
         }
 
+        [HttpGet]
+        [Route("{id:int}/rentalhistory")]
+        public HttpResponseMessage RentalHistory(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+
+                List<RentalHistoryViewModel> _rentalHistory = GetMovieRentalHistory(id);
+                response = request.CreateResponse<List<RentalHistoryViewModel>>(HttpStatusCode.OK, _rentalHistory);
+                
+                return response;
+            });
+        }
+
+        [HttpPost]
+        [Route("return/{rentalId:int}")]
+        public HttpResponseMessage Return(HttpRequestMessage request, int rentalId)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+
+                var rental = _rentalsRepository.GetSingle(rentalId);
+
+                if (rental == null)
+                    response = request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid rental");
+                else
+                {
+                    rental.Status = "Returned";
+                    rental.Stock.IsAvailable = true;
+                    rental.ReturnedDate = DateTime.Now;
+
+                    _unitOfWork.Commit();
+
+                    response = request.CreateResponse(HttpStatusCode.OK);
+                }
+
+                return response;
+            });
+        }
+
+        [HttpPost]
+        [Route("rent/{customerId:int}/{stockId:int}")]
+        public HttpResponseMessage Rent(HttpRequestMessage request, int customerId, int stockId)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+
+                var customer = _customersRepository.GetSingle(customerId);
+                var stock = _stocksRepository.GetSingle(stockId);
+
+                if (customer == null || stock == null)
+                {
+                    response = request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid Customer or Stock");
+                }
+                else
+                {
+                    if (stock.IsAvailable)
+                    {
+                        Rental _rental = new Rental()
+                        {
+                            CustomerId = customerId,
+                            StockId = stockId,
+                            RentalDate = DateTime.Now,
+                            Status = "Borrowed"
+                        };
+
+                        _rentalsRepository.Add(_rental);
+
+                        stock.IsAvailable = false;
+
+                        _unitOfWork.Commit();
+
+                        RentalViewModel rentalVm = Mapper.Map<Rental, RentalViewModel>(_rental);
+
+                        response = request.CreateResponse<RentalViewModel>(HttpStatusCode.Created, rentalVm);
+                    }
+                    else
+                        response = request.CreateErrorResponse(HttpStatusCode.BadRequest, "Selected stock is not available anymore");
+                }
+
+                return response;
+            });
+        }
 
         #region Private Methods
 

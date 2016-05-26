@@ -24,6 +24,10 @@ namespace HomeCinema.Web.Infrastructure.Mappings
 
             CreateMap<Customer, CustomerViewModel>();
 
+            CreateMap<Stock, StockViewModel>();
+
+            CreateMap<Rental, RentalViewModel>();
+
             /*
             Mapper.CreateMap<Movie, MovieViewModel>()
                 .ForMember(vm => vm.Genre, map => map.MapFrom(m => m.Genre.Name))

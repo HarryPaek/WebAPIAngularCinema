@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\CustomerExtensions.cs" />
+    <Compile Include="Extensions\StockExtensions.cs" />
     <Compile Include="Extensions\UserExtensions.cs" />
     <Compile Include="HomeCinemaContext.cs" />
     <Compile Include="Configurations\CustomerConfiguration.cs" />
