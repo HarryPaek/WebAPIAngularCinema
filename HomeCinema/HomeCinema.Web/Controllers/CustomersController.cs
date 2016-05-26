@@ -22,7 +22,7 @@ namespace HomeCinema.Web.Controllers
         private readonly IEntityBaseRepository<Customer> _customersRepository;
 
         public CustomersController(IEntityBaseRepository<Customer> customersRepository,
-                                   IEntityBaseRepository<Error> _errorsRepository, IUnitOfWork _unitOfWork) : base(_errorsRepository, _unitOfWork)
+                                   IEntityBaseRepository<Error> errorsRepository, IUnitOfWork unitOfWork) : base(errorsRepository, unitOfWork)
         {
             _customersRepository = customersRepository;
         }
@@ -38,7 +38,6 @@ namespace HomeCinema.Web.Controllers
             {
                 HttpResponseMessage response = null;
                 IQueryable<Customer> customerQuery = null;
-                // int totalMovies = new int();
 
                 if (!string.IsNullOrEmpty(filter))
                 {
@@ -54,7 +53,7 @@ namespace HomeCinema.Web.Controllers
                     customerQuery = _customersRepository.GetAll().OrderBy(c => c.ID);
                 }
 
-                int totalMovies = customerQuery.Count();
+                int totalCustomers = customerQuery.Count();
                 var customers = customerQuery.Skip(currentPage * currentPageSize)
                                      .Take(currentPageSize)
                                      .ToList();
@@ -64,8 +63,8 @@ namespace HomeCinema.Web.Controllers
                 PaginationSet<CustomerViewModel> pagedSet = new PaginationSet<CustomerViewModel>()
                 {
                     Page = currentPage,
-                    TotalCount = totalMovies,
-                    TotalPages = (int)Math.Ceiling((decimal)totalMovies / currentPageSize),
+                    TotalCount = totalCustomers,
+                    TotalPages = (int)Math.Ceiling((decimal)totalCustomers / currentPageSize),
                     Items = customersVM
                 };
 

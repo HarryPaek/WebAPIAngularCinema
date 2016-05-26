@@ -14,5 +14,15 @@ namespace HomeCinema.Data.Extensions
 
             return _userExists;
         }
+
+        public static string GetCustomerFullName(this IEntityBaseRepository<Customer> customersRepository, int customerId)
+        {
+            string _customerName = string.Empty;
+            var _customer = customersRepository.GetSingle(customerId);
+
+            _customerName = string.Format("{0} {1}", _customer.FirstName, _customer.LastName);
+
+            return _customerName;
+        }
     }
 }
