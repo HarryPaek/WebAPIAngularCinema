@@ -36,7 +36,8 @@
             })
             .when("/movies/add", {
                 templateUrl: "scripts/spa/movies/add.html",
-                controller: "movieAddCtrl"
+                controller: "movieAddCtrl",
+                resolve: { isAuthenticated: isAuthenticated }
             })
             .when("/movies/:id", {
                 templateUrl: "scripts/spa/movies/details.html",
@@ -48,8 +49,8 @@
                 controller: "movieEditCtrl"
             })
             .when("/rental", {
-                templateUrl: "scripts/spa/rental/rental.html",
-                controller: "rentStatsCtrl"
+                templateUrl: "scripts/spa/rental/rentalStats.html",
+                controller: "rentalStatsCtrl"
             })
             .otherwise({ redirectTo: "/" });
     }

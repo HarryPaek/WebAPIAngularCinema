@@ -20,7 +20,8 @@ namespace HomeCinema.Web
                 "~/Scripts/Vendors/angular-cookies.js",
                 "~/Scripts/Vendors/angular-validator.js",
                 "~/Scripts/Vendors/angular-base64.js",
-                "~/Scripts/Vendors/angular-file-upload.js",
+                //"~/Scripts/Vendors/angular-file-upload.js",
+                "~/Scripts/Vendors/ng-file-upload.js",
                 "~/Scripts/Vendors/angucomplete-alt.min.js",
                 "~/Scripts/Vendors/ui-bootstrap-tpls.js",
                 "~/Scripts/Vendors/underscore.js",
@@ -57,7 +58,7 @@ namespace HomeCinema.Web
                 "~/Scripts/spa/movies/movieEditCtrl.js",
                 "~/Scripts/spa/controllers/rentalCtrl.js",
                 "~/Scripts/spa/rental/rentMovieCtrl.js",
-                "~/Scripts/spa/rental/rentStatsCtrl.js"
+                "~/Scripts/spa/rental/rentalStatsCtrl.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

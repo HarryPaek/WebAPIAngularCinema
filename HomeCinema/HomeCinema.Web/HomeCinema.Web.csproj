@@ -161,6 +161,9 @@
     <Content Include="Content\images\movies\minions.jpg" />
     <Content Include="Content\images\movies\southpaw.jpg" />
     <Content Include="Content\images\movies\spectre.jpg" />
+    <Content Include="Content\images\movies\ted2-Modified01.jpg" />
+    <Content Include="Content\images\movies\ted2-Modified03.jpg" />
+    <Content Include="Content\images\movies\ted2-Modified05.jpg" />
     <Content Include="Content\images\movies\ted2.jpg" />
     <Content Include="Content\images\movies\thelongestride.jpg" />
     <Content Include="Content\images\movies\thewalkingdead.jpg" />
@@ -168,6 +171,8 @@
     <Content Include="Content\images\movies\truedetective.jpg" />
     <Content Include="Content\images\movies\unknown.jpg" />
     <Content Include="Content\images\movies\Wallpaper 8.png" />
+    <Content Include="Content\images\movies\WolfBoy.jpg" />
+    <Content Include="Content\images\movies\수상한그녀.jpg" />
     <Content Include="Content\images\raty\cancel-off.png" />
     <Content Include="Content\images\raty\cancel-on.png" />
     <Content Include="Content\images\raty\star-half-big.png" />
@@ -202,13 +207,20 @@
     <Content Include="Scripts\spa\layout\topBar.html" />
     <Content Include="Scripts\spa\modules\common.core.js" />
     <Content Include="Scripts\spa\modules\common.ui.js" />
+    <Content Include="Scripts\spa\movies\add.html" />
     <Content Include="Scripts\spa\movies\details.html" />
+    <Content Include="Scripts\spa\movies\edit.html" />
+    <Content Include="Scripts\spa\movies\movieAddCtrl.js" />
     <Content Include="Scripts\spa\movies\movieDetailsCtrl.js" />
+    <Content Include="Scripts\spa\movies\movieEditCtrl.js" />
     <Content Include="Scripts\spa\movies\movies.html" />
     <Content Include="Scripts\spa\movies\moviesCtrl.js" />
+    <Content Include="Scripts\spa\rental\rentalStats.html" />
+    <Content Include="Scripts\spa\rental\rentalStatsCtrl.js" />
     <Content Include="Scripts\spa\rental\rentMovieCtrl.js" />
     <Content Include="Scripts\spa\rental\rentMovieModal.html" />
     <Content Include="Scripts\spa\services\apiService.js" />
+    <Content Include="Scripts\spa\services\fileUploadService.js" />
     <Content Include="Scripts\spa\services\membershipService.js" />
     <Content Include="Scripts\spa\services\notificationService.js" />
     <Content Include="Scripts\Vendors\angucomplete-alt.min.js" />
@@ -226,6 +238,7 @@
     <Content Include="Scripts\Vendors\loading-bar.js" />
     <Content Include="Scripts\Vendors\modernizr-2.8.3.js" />
     <Content Include="Scripts\Vendors\morris.js" />
+    <Content Include="Scripts\Vendors\ng-file-upload.js" />
     <Content Include="Scripts\Vendors\raphael.js" />
     <Content Include="Scripts\Vendors\respond.src.js" />
     <Content Include="Scripts\Vendors\toastr.js" />
@@ -237,7 +250,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacWebapiConfig.cs" />
-    <Compile Include="App_Start\AutoMapperConfiguration.cs" />
+    <Compile Include="Infrastructure\Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -253,7 +266,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
+    <Compile Include="Infrastructure\Core\FileUploadResult.cs" />
+    <Compile Include="Infrastructure\Core\MimeMultipart.cs" />
     <Compile Include="Infrastructure\Core\PaginationSet.cs" />
+    <Compile Include="Infrastructure\Core\UploadMultipartFormProvider.cs" />
     <Compile Include="Infrastructure\Extensions\EntitiesExtensions.cs" />
     <Compile Include="Infrastructure\Extensions\RequestMessageExtensions.cs" />
     <Compile Include="Infrastructure\Mappings\DomainToViewModelMappingProfile.cs" />
@@ -271,6 +287,7 @@
     <Compile Include="Models\RentalHistoryViewModel.cs" />
     <Compile Include="Models\RentalViewModel.cs" />
     <Compile Include="Models\StockViewModel.cs" />
+    <Compile Include="Models\TotalRentalHistoryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

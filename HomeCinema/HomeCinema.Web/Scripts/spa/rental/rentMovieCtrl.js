@@ -70,6 +70,12 @@
         }
 
         function selectionChanged($item) {
+            if ($item) {
+                console.log("rentMovieCtrl.selectionChanged = [" + $item + "]");
+            }
+            else {
+                console.log("rentMovieCtrl.selectionChanged()...");
+            }
         }
 
         loadStockItems();

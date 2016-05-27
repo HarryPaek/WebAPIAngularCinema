@@ -8,7 +8,7 @@ namespace HomeCinema.Web.Models
         public int CustomerId { get; set; }
         public int StockId { get; set; }
         public DateTime RentalDate { get; set; }
-        public DateTime ReturnedDate { get; set; }
+        public Nullable<DateTime> ReturnedDate { get; set; }
         public string Status { get; set; }
     }
 }

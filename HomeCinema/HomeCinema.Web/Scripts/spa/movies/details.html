@@ -67,6 +67,7 @@
                             <th>#</th>
                             <th>Name</th>
                             <th>Rental date</th>
+                            <th>Return date</th>
                             <th>Status</th>
                             <th></th>
                         </tr>
@@ -76,6 +77,7 @@
                             <td>{{rental.ID}}</td>
                             <td>{{rental.Customer}}</td>
                             <td>{{rental.RentalDate | date:'fullDate'}}</td>
+                            <td>{{rental.ReturnedDate}}</td>
                             <td ng-class="getStatusColor(rental.Status)">{{rental.Status}}</td>
                             <td class="text-center">
                                 <button ng-if="isBorrowed(rental)" type="button" class="btn btn-primary btn-xs" ng-click="returnMovie(rental.ID)">Return</button>

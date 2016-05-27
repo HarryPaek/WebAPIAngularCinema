@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using HomeCinema.Web.Infrastructure.Mappings;
+using System.Web.Http;
 
 namespace HomeCinema.Web
 {

@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
-using HomeCinema.Web.Infrastructure.Mappings;
 
-namespace HomeCinema.Web
+namespace HomeCinema.Web.Infrastructure.Mappings
 {
     public class AutoMapperConfiguration
     {
